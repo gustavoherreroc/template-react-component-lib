@@ -1,9 +1,9 @@
 {
-  "name": "template-react-component-lib",
-  "version": "0.0.1",
+  "name": "@gustavoherreroc/template-react-component-lib",
+  "version": "0.0.3",
   "description": "A react component library",
   "scripts": {
-   "rollup": "rollup -c"
+    "rollup": "rollup -c"
   },
   "author": "Gustavo H",
   "license": "ISC",
@@ -13,16 +13,24 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "^18.0.28",
     "jest-environment-jsdom": "^29.4.3",
-    "react": "^18.2.0",
     "rollup": "^3.17.2",
     "rollup-plugin-dts": "^5.2.0",
     "tslib": "^2.5.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.7.4"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/gustavoherreroc"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@stitches/react": "^1.2.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

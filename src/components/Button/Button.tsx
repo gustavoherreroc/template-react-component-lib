@@ -1,11 +1,17 @@
-import React from "react";
+import { styled } from '../../../stitches.config';
 
-interface ButtonProps {
-  label: string;
-}
-
-const Button = (props: ButtonProps) => {
-  return <button>{props.label}</button>
-}
+const Button = styled('button', {
+  // Reset
+  all: 'unset',
+  alignItems: 'center',
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  '&::before': {
+    boxSizing: 'border-box',
+  },
+  '&::after': {
+    boxSizing: 'border-box',
+  },
+});
 
 export default Button;
