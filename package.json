@@ -1,22 +1,43 @@
 {
   "name": "@gustavoherreroc/template-react-component-lib",
-  "version": "0.0.5",
+  "version": "0.0.10",
   "description": "A react component library",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "co:login": "aws codeartifact login --tool npm --repository teamRepository --domain company --profile personalAccount",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Gustavo H",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.21.0",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack4": "^6.5.16",
+    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",
+    "@vitest/coverage-c8": "^0.28.5",
+    "babel-loader": "^8.3.0",
     "jest-environment-jsdom": "^29.4.3",
     "rollup": "^3.17.2",
     "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
     "tslib": "^2.5.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vitest": "^0.28.5"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -25,7 +46,7 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/gustavoherreroc"
+    "registry": "https://company-218750090586.d.codeartifact.us-east-1.amazonaws.com/npm/teamRepository/"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
