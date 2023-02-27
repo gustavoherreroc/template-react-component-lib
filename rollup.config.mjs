@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" };
-import postcss from "rollup-plugin-postcss"
+import postcss from "rollup-plugin-postcss";
 
 export default [
   {
@@ -29,16 +29,26 @@ export default [
           /\.test.((js|jsx|ts|tsx))$/,
           // Exclude story files
           /\.stories.((js|jsx|ts|tsx|mdx))$/,
+          "node_modules",
+          "pages",
         ],
-        tsconfig: "./tsconfig.json",
+        include: [
+          "next-env.d.ts",
+          "**/*.ts",
+          "**/*.tsx",
+          "src",
+          ".eslintrc.cjs",
+          "vite.config.ts",
+        ],
+        tsconfig: './tsconfig.json',
       }),
-      postcss()      
+      postcss(),
     ],
   },
   {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
+    input: 'dist/esm/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    plugins: [dts.default()],
     external: [/\.css$/],
   },
 ];
