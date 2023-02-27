@@ -56,6 +56,6 @@ Default.args = {
   size: '1',
   variant: 'gray',
   ghost: false,
-  state: ActiveXObject,
+  state: 'active',
 };
 
