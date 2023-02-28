@@ -1,10 +1,10 @@
 {
-  "name": "@gustavoherreroc/template-react-component-lib",
-  "version": "0.0.12",
+  "name": "@jive/react-library",
+  "version": "0.0.1",
   "description": "A react component library",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
-    "co:login": "aws codeartifact login --tool npm --repository teamRepository --domain company --profile personalAccount",
+    "co:login": "aws codeartifact login --tool npm --repository jive-components --domain jive --domain-owner 856436179421 --region us-east-1 --profile jive",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "storybook": "start-storybook -p 6006",
@@ -47,7 +47,7 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://company-218750090586.d.codeartifact.us-east-1.amazonaws.com/npm/teamRepository/"
+    "registry": "https://jive-856436179421.d.codeartifact.us-east-1.amazonaws.com/npm/jive-components/"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",

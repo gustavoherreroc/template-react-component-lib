@@ -51,11 +51,18 @@ export default {
 
 const Template = (args) => <Button {...args}>Hello World</Button>;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   size: '1',
   variant: 'gray',
   ghost: false,
   state: 'active',
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  size: '1',
+  variant: 'blue',
+  ghost: false,
+  state: 'active',
+};
